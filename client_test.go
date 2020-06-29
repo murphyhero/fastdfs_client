@@ -18,20 +18,23 @@ func TestUpload(t *testing.T) {
 		fmt.Println(err.Error())
 		return
 	}
-	fmt.Println(fileId)
+	fmt.Println("上传服务", fileId)
 	if err := client.DownloadToFile(fileId, "tempFile", 0, 0); err != nil {
 		fmt.Println(err.Error())
 		return
 	}
+
 	if buffer, err := client.DownloadToBuffer(fileId, 0, 19); err != nil {
 		fmt.Println(err.Error())
 	} else {
 		fmt.Println(string(buffer))
 	}
+
 	if err := client.DeleteFile(fileId); err != nil {
 		fmt.Println(err.Error())
 		return
 	}
+
 }
 
 func TestUploadFile100(t *testing.T) {
