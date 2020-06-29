@@ -1,4 +1,4 @@
-package fdfs_client
+package fastdfs_client
 
 import (
 	"testing"
